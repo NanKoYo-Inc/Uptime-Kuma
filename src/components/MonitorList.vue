@@ -327,6 +327,9 @@ export default {
                 const loweredSearchText = this.searchText.toLowerCase();
                 searchTextMatch =
                     monitor.name.toLowerCase().includes(loweredSearchText)
+                    || monitor.url?.toLowerCase().includes(loweredSearchText)
+                    || monitor.hostname?.toLowerCase().includes(loweredSearchText)
+                    || monitor.dns_resolve_server?.toLowerCase().includes(loweredSearchText)
                     || monitor.tags.find(tag => tag.name.toLowerCase().includes(loweredSearchText)
                         || tag.value?.toLowerCase().includes(loweredSearchText));
             }
